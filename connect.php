@@ -73,7 +73,7 @@ if(isset($_POST["update"])){
   $price=$_POST["price"];
   $quantity=$_POST["quantity"];
 
-  $conn-> query("UPDATE Article SET designation='$designation', price=$price, quantity=$quantity")
+  $conn-> query("UPDATE Article SET designation='$designation', price=$price, quantity=$quantity where id=$id")
           or die($conn->error());
 
   $_SESSION['message'] = "Article infos has been updated";
